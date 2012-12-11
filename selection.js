@@ -21,7 +21,6 @@
 		this.id = obj.id;
 		this.title = obj.title;
 		this.selections = [];
-		this.highlight_class = "selection_highlight";
 		for(i=0,len=obj.selections.length;i<len;i++) {
 			this.selections.push(new MediaItem(obj.selections[i]));
 		}
@@ -36,19 +35,17 @@
 		if (this.nav_element) return this.nav_element;
 		return this.nav_element = $("<li/>").append(this.get_anchor_element());
 	}
-		Category.prototype.get_article = function() {
+	Category.prototype.get_article = function() {
 		if (this.article) return this.article;
 		return this.article = $("<article/>",{"class":this.id}).css("display","none").append(
 			$("<h2/>").append(this.title)
 		);
 	}
 	Category.prototype.toggle_on = function() {
-		$(this.get_nav_element()).addClass(this.highlight_class);
 		this.get_anchor_element().focus();
 		return this.show_article();
 	}
 	Category.prototype.toggle_off = function() {
-		$(this.get_nav_element()).removeClass(this.highlight_class);
 		return this.hide_article();
 	}
 	Category.prototype.show_article = function() {
