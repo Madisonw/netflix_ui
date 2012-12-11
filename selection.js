@@ -170,7 +170,6 @@
 		var categories = _.map(data.categories,function(data) {
 			return new Category(data);
 		});
-		console.log(categories);
 		render_ui(categories);
 		bind_ui(categories);
 	}
