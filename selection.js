@@ -81,7 +81,7 @@
 			RIGHT = 39,
 			DOWN = 40,
 			ENTER = 13,
-			ROW_JUMP_AMOUNT=5;
+			ROW_JUMP_AMOUNT=4;
 		var current_cat_index = 0;
 		var current_media_item_index = null;
 		var url;
@@ -170,6 +170,7 @@
 		var categories = _.map(data.categories,function(data) {
 			return new Category(data);
 		});
+		console.log(categories);
 		render_ui(categories);
 		bind_ui(categories);
 	}
