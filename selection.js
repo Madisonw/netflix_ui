@@ -37,7 +37,7 @@
 	}
 	Category.prototype.get_article = function() {
 		if (this.article) return this.article;
-		return this.article = $("<article/>",{"class":this.id}).css("display","none").append(
+		return this.article = $("<article/>").css("display","none").append(
 			$("<h2/>").append(this.title)
 		);
 	}
